@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  fastapi:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - .:/app  # Mount the local directory to /app in the container
+    environment:
+      - PYTHONUNBUFFERED=1  # To avoid buffering in logs
+    restart: always
